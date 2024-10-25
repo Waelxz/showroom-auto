@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<app-head-bar></app-head-bar>
+
+<app-search-bar [autos]="autoList" (filteredAutosChange)="updateFilteredAutos($event)"></app-search-bar>
+
+<div class="grid">
+  <div *ngFor="let car of filteredAutos" class="car-card">
+    <h2>{{ car.make }} {{ car.model }}</h2>
+    <img [src]="car.photo" alt="{{ car.model }}" class="car-photo">
+    <p>Price: {{ car.price }} K€</p>
+    <p>Power: {{ car.power }} HP</p>
+    <p>Available units: {{ car.availability }}</p>
+  </div>
+</div>
+
+</body>
+</html>

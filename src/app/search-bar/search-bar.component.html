@@ -1,0 +1,19 @@
+<div class="search-container">
+  <form (submit)="onSearchClick(); $event.preventDefault()">
+    <input 
+      type="text" 
+      placeholder="Enter car brand or model" 
+      [(ngModel)]="brand" 
+      name="carBrand"
+      (input)="onInputChange()" 
+      class="search-box"
+    >
+    <button 
+      type="button" 
+      (click)="onSearchClick()" 
+      class="search-button" 
+    >
+      Search
+    </button>
+  </form>
+</div>
